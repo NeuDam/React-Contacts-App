@@ -1,0 +1,309 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    background-image: url('https://wallpaperaccess.com/full/4442372.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+main{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.container_form{
+    position: absolute;
+    width: 30%;
+    top: 10%;
+    left: 20px;
+    background-color: rgb(41 38 38 / 50%);
+    backdrop-filter: blur(5px);
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 10;
+}
+
+.container_form h1{
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    font-size: 2em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+}
+
+.container_form form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+}
+
+form input{
+    font-size: 16px;
+    width: 70%;
+    text-align: center;
+    padding: 5px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    background-color: #252525a8;
+    color: rgba(255, 255, 255, 0.774);
+}
+
+form input:focus{
+    outline: 1px solid rgba(255, 255, 255, 0.555);
+}
+
+form button {
+    width: 40%;
+    margin: 15px 0px;
+    padding: 15px 10px;
+    border: none;
+    border-radius: 10px 30px;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    background-color: rgb(117, 221, 221);
+    z-index: 1;
+}
+
+form button::before{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 10px 30px;
+    background-image: linear-gradient(to right, rgb(236, 110, 180) 0%, rgb(23, 140, 218) 100%);
+    z-index: -1;
+    transition: width .7s;
+}
+
+form button:hover::before{
+    width: 100%;
+}
+
+.container_form_hidden{
+    visibility: hidden;
+}
+
+.show_form{
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    visibility: hidden;
+    background-image: linear-gradient(to right, rgb(236, 110, 180) 0%, rgb(23, 140, 218) 100%);
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: box-shadow .7s;
+    z-index: 10;
+}
+
+.show_form:hover{
+    box-shadow: 0px 0px 15px #8a8686;
+}
+
+.hidde_form{
+    border: none;
+    border-radius: 50px;
+    padding: 5px 10px;
+    display: flex;
+    background-image: linear-gradient(to right, rgb(236, 110, 180) 0%, rgb(23, 140, 218) 100%);
+    cursor: pointer;
+    transition: transform .4s;
+}
+
+.hidde_form:hover{
+    transform: scale(1.1);
+}
+
+.container_contacts{
+    position: relative;
+    padding: 20px;
+    width: 65%;
+    background-color: rgb(32 28 28 / 60%);
+    backdrop-filter: blur(10px);
+    border-radius: 10px 20px;
+    min-height: 35vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 250px));
+    justify-content: center;
+    gap: .5rem;
+    max-height: 90vh;
+    overflow: auto;
+}
+
+.contact{
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(19 17 17 / 20%);
+    backdrop-filter: blur(20px);
+}
+
+.contact button{
+    background-image: linear-gradient(to right, rgb(236, 110, 180) 0%, rgb(23, 140, 218) 100%);
+    border-radius: 10px;
+    border: none;
+    padding: 5px 8px;
+    cursor: pointer;
+    transition: transform .5s, box-shadow .5s;
+}
+
+.contact button:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 0px 5px #8a8686;
+}
+
+.contact h2{
+    width: 100%;
+    text-align: center;
+    font-size: 2.3em;
+    margin: 0;
+    margin-bottom: 10px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-transform: capitalize;
+    text-shadow: 0px 0px 5px rgb(23, 140, 218), 0px 0px 6px rgb(236, 110, 180);
+}
+
+.container_contacts h1{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    letter-spacing: 2px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+}
+
+.contact span,a{
+    display: inline-block;
+    margin: 5px 15px;
+}
+
+.contact a{
+    text-decoration: none;
+    text-transform: capitalize;
+    color: rgb(23, 140, 218);
+}
+
+.contact a:hover{
+    text-decoration: underline 1px rgb(236, 110, 180);
+}
+
+.contact a:visited{
+    color: rgb(236, 110, 180);
+}
+
+.contact a:is(:visited,:hover){
+    text-decoration: underline 1px rgb(23, 140, 218);
+}
+
+.card_container{
+    width: 30%;
+    background-color: rgb(15 14 14 / 80%);
+    backdrop-filter: blur(5px);
+    padding: 20px 10px;
+    border-radius: 20px;
+    color: white;
+    height: auto;
+    box-shadow: 0px 0px 15px #8a8686;
+
+}
+
+.card_container h1{
+    width: 40%;
+    font-size: 2.5em;
+    text-align: center;
+    text-transform: capitalize;
+    text-shadow: 0px 0px 5px rgb(23, 140, 218), 0px 0px 6px rgb(236, 110, 180);
+
+}
+
+.container_image{
+    position: relative;
+    overflow: hidden;
+    width: 150px; /* Ajusta el ancho según tus necesidades */
+    height: 150px;
+    display: inline-block;
+    margin: 0;
+}
+
+.header_card{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    justify-content: space-around;
+}
+
+.container_image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.details_card{
+    flex-direction: column;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1rem;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    background-image: linear-gradient(60deg, rgb(236 110 180 / 50%) 0%, rgb(23 140 218 / 50%) 100%);
+    backdrop-filter: blur(5px);
+    padding: 10px;
+    font-size: 20px;
+    font-family:'Times New Roman', Times, serif;
+}
+
+.details_card a{
+    text-decoration: none;
+    color: black;
+}
+
+.container_contacts h1{
+    color: red;
+}
+
+@media screen and (max-width:767px){
+
+    * {
+        cursor:default;
+    }
+
+    .card_container{
+        width: 90%;
+    }
+
+    .container_contacts{
+        width: 98%;
+        grid-template-columns: repeat(2, minmax(170px,170px));
+    }
+
+    .container_form{
+        width: 90%;
+    }
+}
