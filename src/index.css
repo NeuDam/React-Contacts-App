@@ -300,7 +300,8 @@ form button:hover::before{
 
     .container_contacts{
         width: 98%;
-        grid-template-columns: repeat(2, minmax(170px,170px));
+        grid-template-columns: repeat(2,1fr);
+        padding: 20px 5px;
     }
 
     .container_form{
