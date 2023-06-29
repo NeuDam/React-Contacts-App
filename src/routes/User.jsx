@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { GlobalStateContext } from "../Context/ContextState";
 
@@ -11,13 +11,24 @@ function User() {
     (contact) => contact.id == params.id
   )[0];
 
+  const [ photo, setPhoto ] = useState('')
+
+  useEffect(() => {
+    fetch('https://dog.ceo/api/breed/husky/images/random')
+     .then(res => res.json())
+     .then((data) => {
+      console.log(data)
+        setPhoto(data.message)
+      })
+  },[])
+
   return (
     <main>
       <div className="card_container">
         <div className="header_card">
           <div className="container_image">
             <img
-              src="https://www.eltiempo.com/files/image_640_428/uploads/2017/10/03/59d322ad01c2c.jpeg"
+              src={photo}
               alt=""
             />
           </div>

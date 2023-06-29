@@ -8,21 +8,19 @@ import ErrorShow from './routes/ErrorShow.jsx'
 import User from './routes/User.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <ContextStateProvider>
 
-      <BrowserRouter>
-      
-        <Routes>
+  <ContextStateProvider>
 
-          <Route path='/React-Contacts-App' element={<App/>} errorElement={<ErrorShow/>} />
-          <Route path='/React-Contacts-App/user/:id' element={<User/>}/>
+    <BrowserRouter>
+    
+      <Routes>
 
-        </Routes>
-      
-      </BrowserRouter>
+        <Route path='/React-Contacts-App' element={<App/>} errorElement={<ErrorShow/>} />
+        <Route path='/React-Contacts-App/user/:id' element={<User/>}/>
 
-    </ContextStateProvider>
+      </Routes>
+    
+    </BrowserRouter>
 
-  </React.StrictMode>,
+  </ContextStateProvider>
 )
